@@ -99,5 +99,8 @@ In addition to the standard course contents, we might use some extra reference m
    cat config.json
    ```
 
-1. Copy the access token and analyze it via [https://jwt.io/](https://jwt.io/) debugger
+1. Copy the access token (starting from the character right `bearer` under `Authorization` field and analyze it via [https://jwt.io/](https://jwt.io/) 
 
+   - Observe that there are three sections
+   - Observe that there are scopes under payload section
+   
