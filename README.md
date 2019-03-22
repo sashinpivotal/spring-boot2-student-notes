@@ -34,7 +34,7 @@ In addition to the standard course contents, we might use some extra reference m
      
 - Spring Cloud Contract 
 
-   - [Presentation - only slides 17 to 27](https://www.slideshare.net/MarcinGrzejszczak/consumer-driven-contracts-and-your-microservice-architecture-83680416)
+   - [Presentation - only slides 18 to 27](https://www.slideshare.net/MarcinGrzejszczak/consumer-driven-contracts-and-your-microservice-architecture-83680416)
    - [Lab](https://spring.io/guides/gs/contract-rest/)
 
 
