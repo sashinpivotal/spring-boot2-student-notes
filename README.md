@@ -42,21 +42,35 @@ In addition to the standard course contents, we might use some extra reference m
 
 ### Deploy a Spring Boot web application
 
-1. Create a free PWS account from [https://run.pivotal.io/](https://run.pivotal.io/)
+1. Create a free PWS account (if you have not done so yet) from [https://run.pivotal.io/](https://run.pivotal.io/)
 1. Download and install `cf` cli from [https://docs.cloudfoundry.org/cf-cli/install-go-cli.html](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html)
-1. Type `cf login -a api.run.pivotal.io` and enter your email and password
+
+    - If you are using MacOS, you can use Homebrew
+
+    ```
+    brew tap cloudfoundry/tap
+    brew install cf-cli
+    ```
+    
+1. Log in to the PWS
+
+   ```
+   cf login -a api.run.pivotal.io
+   ```
+   
 1. Creat a fat jar from any of your Spring Boot web application
 
    ```
    <core-spring-labfiles/lab> ./gradlew 38-rest-ws-solution:build
    ```
+   
 1. Deploy the application to PCF
 
    ```
    <core-spring-labfiles/lab> cf push my-app -p 38-rest-ws-solution/build/libs/38-rest-ws-solution-5.0.c.RELEASE.jar --random-route
    ```
    
-1. Display the apps
+1. Display all apps deployed 
 
    ```
    <core-spring-labfiles/lab> cf apps
@@ -77,6 +91,10 @@ In addition to the standard course contents, we might use some extra reference m
 1. Go to <home-directory>/.cf and observe that there is a file called `config.json`
 
 1. Display the contents of `config.json" and observe that it has access token
+
+   ```
+   cat config.json
+   ```
 
 1. Copy the access token and analyze it via [https://jwt.io/](https://jwt.io/) debugger
 
