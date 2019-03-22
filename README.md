@@ -81,7 +81,7 @@ In addition to the standard course contents, we might use some extra reference m
    
 1. Access the application from a browser by copying the url of the app and place it into a browser's url
 
-1. You can also manage your applications from PWS App Manager UI by going to `https://console.run.pivotal.io/` 
+1. You can also manage your applications from PWS App Manager UI by going to [https://console.run.pivotal.io/](https://console.run.pivotal.io/)
 
 ### OAuth in action 
 
