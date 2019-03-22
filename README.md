@@ -38,6 +38,7 @@ In addition to the standard course contents, we might use some extra reference m
 
    - [Presentation - only slides 18 to 27](https://www.slideshare.net/MarcinGrzejszczak/consumer-driven-contracts-and-your-microservice-architecture-83680416)
    - [Lab](https://spring.io/guides/gs/contract-rest/)
+    : Follow instruction under "How to complete this guide/To skip the basics, do the following:" section 
 
 
 ## How to deploy an app to PCF
