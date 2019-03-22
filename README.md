@@ -28,6 +28,8 @@ In addition to the standard course contents, we might use some extra reference m
 
    - Read the [document](https://github.com/sashinpivotal/spring-boot-actuator-micrometer)
 
+- [TDD best practices presentation](https://www.slideshare.net/axykim00/tdd-practices)
+
 - Spring Boot TDD-drive testing 
 
    - [The solution and lab document](https://github.com/sashinpivotal/spring-boot-tdd)
