@@ -30,13 +30,15 @@ In addition to the standard course contents, we might use some extra reference m
      
 - __Actuator/Prometheus lab__
 
-   - Read the [document](https://github.com/sashinpivotal/spring-boot-actuator-micrometer)
+   - Follow the [lab instruction](https://github.com/sashinpivotal/spring-boot-actuator-micrometer)
 
 - [TDD best practices presentation](https://www.slideshare.net/axykim00/tdd-practices)
 
 - __Spring Boot TDD-driven testing__ 
 
-   - [The solution and lab document](https://github.com/sashinpivotal/spring-boot-tdd)
+   - Create a new Spring Boot project and follow [lab instruction](https://github.com/sashinpivotal/spring-boot-tdd)
+   - Solution project is also included in the 
+     above GitHub location
      
 - __Spring Cloud Contract__ 
 
