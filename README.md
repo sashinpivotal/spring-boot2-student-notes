@@ -26,7 +26,7 @@ In addition to the standard course contents, we might use some extra reference m
 
 - OAuth2 lab
 
-  - Clone the [project](https://github.com/sashinpivotal/oauth2-examples) and follow TODO's startting from 
+  - Clone [Maven project](https://github.com/sashinpivotal/oauth2-examples) and follow TODO's startting from TODO-10
      
 - __Actuator/Prometheus lab__
 
