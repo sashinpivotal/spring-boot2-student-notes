@@ -23,6 +23,10 @@ In addition to the standard course contents, we might use some extra reference m
 
   -  [OAuth2 overview presentation](https://www.slideshare.net/SangShin1/spring4-security-oauth2?qid=2163e6e6-ae99-48b0-afcc-88380b8724d8&v=&b=&from_search=1)
   -  [OAuth2 in cloud native environment presentation (slides 7 to 37)](https://www.slideshare.net/WillTran1/enabling-cloud-native-security-with-oauth2-and-multitenant-uaa?qid=2c77ae8e-b2d5-4319-baad-1cd1eb8fec42&v=&b=&from_search=1)
+
+- OAuth2 lab
+
+  - Clone the [project](https://github.com/sashinpivotal/oauth2-examples) and follow TODO's startting from 
      
 - __Actuator/Prometheus lab__
 
