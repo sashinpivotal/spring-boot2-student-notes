@@ -17,7 +17,7 @@ In addition to the standard course contents, we might use some extra reference m
 
 - __Creating our own Spring Boot auto-configuration starter lab__
 
-   - Clone the [project](https://github.com/sashinpivotal/boot2-autoconfig-helloworld.git) and follow TODO's
+   - Clone the [project](https://github.com/sashinpivotal/boot2-autoconfig-helloworld.git) and follow TODO's (TODO 10-16, 20-26, 30-38)
 
 - __OAuth2 presentations__
 
