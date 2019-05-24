@@ -124,6 +124,10 @@ In addition to the standard course contents, we might use some extra reference m
 
 1. You can also manage your applications from PWS App Manager UI by going to [https://console.run.pivotal.io/](https://console.run.pivotal.io/)
 
+1. If you enable Actuator in your Spring Boot application,
+   you can visualize and manage your Actuator endpoints in App Manager.
+   See [Using Spring Boot Actuators with Apps Manager](https://docs.pivotal.io/pivotalcf/2-5/console/using-actuators.html) for more information.
+
 ### OAuth in action
 
 1. Observe that every request has `Authorization` request header set with [PRIVATE DATA HIDDEN], which represents access token
@@ -144,3 +148,77 @@ In addition to the standard course contents, we might use some extra reference m
 
    - Observe that there are three sections
    - Observe that there are scopes under payload section
+
+## Spring Performance Considerations
+
+- [How Fast is Spring - Blog](https://spring.io/blog/2018/12/12/how-fast-is-spring)
+- [How Fast is Spring - Short Deck with Flame graphs](https://presos.dsyer.com/decks/how-fast-is-spring.html)
+- [How Fast is Spring - Spring One 2018](https://www.youtube.com/watch?v=97UTDmonq7w)
+
+
+## Spring Boot 1.5 -> 2.0 Migration Considerations
+
+- [Spring Boot 2.0 Migration guide](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.0-Migration-Guide)
+
+-  If you are running Spring Boot apps accessing Pivotal Cloud Foundry
+   Spring Cloud Services,
+   you will need to consider Springboot, Spring Cloud, and Pivotal
+   Spring Cloud Services version dependencies.
+   See
+   [Spring Cloud Services Client Dependencies](https://docs.pivotal.io/spring-cloud-services/2-0/common/client-dependencies.html).
+
+## XML and Java Configuration
+
+-   [XML Config example](https://howtodoinjava.com/spring5/core/applicationcontext-xml-config-example/)
+-   [Annotation vs XML](https://docs.spring.io/spring/docs/current/spring-framework-reference/core.html#beans-annotation-config)
+
+## Rest Template Builder
+
+-   [Javadoc](https://docs.spring.io/spring-boot/docs/current/api/org/springframework/boot/web/client/RestTemplateBuilder.html)
+-   [RestTemplate Customization](https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-resttemplate.html#boot-features-resttemplate-customization)
+-   [Tutorial](https://www.baeldung.com/spring-rest-template-builder)
+-   Example of a Spring Cloud Load Balanced Rest Template customized with
+    timeout:
+
+    ```java
+        /**
+         * RestTemplate Builder
+         *
+         * Following example sets connect timeout of 500ms,
+         * where if client cannot acquire open connection on a socket,
+         * it will time out.
+         *
+         * Operations that timeout on connect events may be retried without
+         * regard to Idempotence.
+         *
+         * The example also shows how to configure the read timeout to 2
+         * seconds.
+         * This protects the calling client from long running calls in a
+         * downstream server/producer.
+         *
+         * Retries may only be executed across read timeouts if the down
+         * stream operation is idempotent,
+         * use with care.
+         *
+         * @return RestTemplate
+         */
+        @LoadBalanced
+        @Bean
+        public RestTemplate restTemplate() {
+            return new RestTemplateBuilder()
+                    .setConnectTimeout(Duration.ofMillis(500L))
+                    .setReadTimeout(Duration.ofMillis(2000L))
+                    .build();
+        }
+    ```
+
+## Microservices & Fault Tolerance Patterns
+
+- [Microservices Patterns](https://microservices.io/patterns/microservices.html)
+- [Release It! Second Edition](https://pragprog.com/book/mnee2/release-it-second-edition)
+- [Chaos Engineering](https://principlesofchaos.org/)
+- [Chaos Monkey for Spring Boot apps](https://codecentric.github.io/chaos-monkey-spring-boot/)
+
+## Certification
+
+- [Spring Professional Certification Study Guide](https://d1fto35gcfffzn.cloudfront.net/academy/Spring-Professional-Certification-Study-Guide.pdf)
