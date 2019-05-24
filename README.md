@@ -77,6 +77,10 @@ In addition to the standard course contents, we might use some extra reference m
    - [Lab](https://spring.io/guides/gs/contract-rest/)
     : Follow instruction under "How to complete this guide/To skip the basics, do the following:" section
 
+- __Spring MVC and REST__
+
+   - [Spring Web](https://docs.spring.io/spring/docs/5.1.7.RELEASE/spring-framework-reference/web.html#spring-web)
+   - [Exception handling in Spring MVC](https://spring.io/blog/2013/11/01/exception-handling-in-spring-mvc)
 
 ## How to deploy an app to PCF
 
