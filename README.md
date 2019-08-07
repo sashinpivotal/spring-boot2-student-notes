@@ -14,6 +14,7 @@ In addition to the standard course contents, we might use some extra reference m
 
    - [Presentation](http://deck.appcontinuum.io/assets/player/KeynoteDHTMLPlayer.html#0)
    - [Website](http://www.appcontinuum.io/)
+   - [Sample application](https://github.com/platform-acceleration-lab/pal-tracker-distributed)
 
 - Spring Lifecycle changes with Spring 5.+ and Java 11
 
