@@ -128,7 +128,7 @@ In addition to the standard course contents, we might use some extra reference m
 1. If you enable Actuator in your Spring Boot application,
    you can visualize and manage your Actuator endpoints in App Manager.
    See [Using Spring Boot Actuators with Apps Manager](https://docs.pivotal.io/pivotalcf/2-5/console/using-actuators.html) for more information.
-
+   
 ### OAuth in action
 
 1. Observe that every request has `Authorization` request header set with [PRIVATE DATA HIDDEN], which represents access token
@@ -150,10 +150,11 @@ In addition to the standard course contents, we might use some extra reference m
    - Observe that there are three sections
    - Observe that there are scopes under payload section
 
-### Using MySQL backing servce
+## PCF: Using MySQL backing servce
 
 - Clone [boot2-mysql-app](https://github.com/sashinpivotal/boot2-mysql-app.git) and follow
   TODO steps
+
 
 ## Spring Performance Considerations
 
