@@ -150,6 +150,11 @@ In addition to the standard course contents, we might use some extra reference m
    - Observe that there are three sections
    - Observe that there are scopes under payload section
 
+### Using MySQL backing servce
+
+- Clone [boot2-mysql-app](https://github.com/sashinpivotal/boot2-mysql-app.git) and follow
+  TODO steps
+
 ## Spring Performance Considerations
 
 - [How Fast is Spring - Blog](https://spring.io/blog/2018/12/12/how-fast-is-spring)
