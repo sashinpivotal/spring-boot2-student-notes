@@ -5,26 +5,33 @@ In addition to the standard course contents, we might use some extra reference m
 
 ## Microservices
 
-- The 12 Factors App
+### The 12 Factors App
 
   - [The 12 Factors presentation](https://content.pivotal.io/slides/the-12-factors-for-building-cloud-native-software)
   - [The 12 Factor App website](https://12factor.net/)
   - [Beyond 12 Factor App blog](https://content.pivotal.io/blog/beyond-the-twelve-factor-app)
 
-- App Continuum
+### App Continuum
 
    - [Presentation](http://deck.appcontinuum.io/assets/player/KeynoteDHTMLPlayer.html#0)
    - [Website](http://www.appcontinuum.io/)
    - [Sample application](https://github.com/platform-acceleration-lab/pal-tracker-distributed)
 
       
-## Spring Boot - Closer look
+## Auto-configuration starter
 
-- __Creating our own Spring Boot auto-configuration starter lab__
+### Creating our own Spring Boot auto-configuration starter lab
 
    - Clone the [project](https://github.com/sashinpivotal/boot2-autoconfig-helloworld.git) and follow TODO's (TODO 10-16, 20-26, 30-38)
 
-## Rest Template Builder
+## REST
+
+### Spring MVC and REST
+
+   - [Spring Web](https://docs.spring.io/spring/docs/5.1.7.RELEASE/spring-framework-reference/web.html#spring-web)
+   - [Exception handling in Spring MVC](https://spring.io/blog/2013/11/01/exception-handling-in-spring-mvc)
+
+###  RestTemplate
 
 -   [Javadoc](https://docs.spring.io/spring-boot/docs/current/api/org/springframework/boot/web/client/RestTemplateBuilder.html)
 -   [RestTemplate Customization](https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-resttemplate.html#boot-features-resttemplate-customization)
@@ -64,7 +71,7 @@ In addition to the standard course contents, we might use some extra reference m
         }
     ```
 
-## How to access HSQLDB
+## How to run HSQLDB Client
 
 - Add the following configuration class
 
@@ -106,7 +113,7 @@ public class HsqldbConfig {
 
 ## Actuator
 
-- __Actuator/Prometheus lab__
+### Actuator/Prometheus lab
 
    - Follow the [lab instruction](https://github.com/sashinpivotal/spring-boot-actuator-micrometer)
 
@@ -116,27 +123,18 @@ public class HsqldbConfig {
 
 - [TDD best practices presentation](https://www.slideshare.net/axykim00/tdd-practices)
 
-- __Spring Boot TDD-driven testing__
+- Spring Boot TDD-driven testing
 
    - Create a new Spring Boot project and follow [lab instruction](https://github.com/sashinpivotal/spring-boot-tdd)
    - Solution project is also included in the
      above GitHub location
 
-- __Spring Cloud Contract__
 
-   - [Presentation - only slides 18 to 27](https://www.slideshare.net/MarcinGrzejszczak/consumer-driven-contracts-and-your-microservice-architecture-83680416)
-   - [Lab](https://spring.io/guides/gs/contract-rest/)
-    : Follow instruction under "How to complete this guide/To skip the basics, do the following:" section
-
-- __Spring MVC and REST__
-
-   - [Spring Web](https://docs.spring.io/spring/docs/5.1.7.RELEASE/spring-framework-reference/web.html#spring-web)
-   - [Exception handling in Spring MVC](https://spring.io/blog/2013/11/01/exception-handling-in-spring-mvc)
 
 
 ## OAuth2
 
-- __OAuth2 presentations__
+- OAuth2 presentations
 
   -  [OAuth2 overview presentation](https://www.slideshare.net/axykim00/spring-security-oauth2)
   -  [OAuth2 in cloud native environment presentation (slides 7 to 37)](https://www.slideshare.net/WillTran1/enabling-cloud-native-security-with-oauth2-and-multitenant-uaa?qid=2c77ae8e-b2d5-4319-baad-1cd1eb8fec42&v=&b=&from_search=1)
@@ -145,6 +143,13 @@ public class HsqldbConfig {
 
   - Clone [Maven project](https://github.com/sashinpivotal/oauth2-examples) and follow TODO's startting from TODO-10
   
+
+## Spring Cloud Contract
+
+   - [Presentation - only slides 18 to 27](https://www.slideshare.net/MarcinGrzejszczak/consumer-driven-contracts-and-your-microservice-architecture-83680416)
+   - [Lab](https://spring.io/guides/gs/contract-rest/)
+    : Follow instruction under "How to complete this guide/To skip the basics, do the following:" section
+
   
 ## Tools
 
