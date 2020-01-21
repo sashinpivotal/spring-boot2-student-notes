@@ -1,8 +1,9 @@
-## Reference materials
+# Reference materials
 
 In addition to the standard course contents, we might use some extra reference materials below whenever needed:
 
-- [IntelliJ IDEA default keymap](https://resources.jetbrains.com/storage/products/intellij-idea/docs/IntelliJIDEA_ReferenceCard.pdf)
+
+## Microservices
 
 - The 12 Factors App
 
@@ -15,6 +16,141 @@ In addition to the standard course contents, we might use some extra reference m
    - [Presentation](http://deck.appcontinuum.io/assets/player/KeynoteDHTMLPlayer.html#0)
    - [Website](http://www.appcontinuum.io/)
    - [Sample application](https://github.com/platform-acceleration-lab/pal-tracker-distributed)
+
+      
+## Spring Boot - Closer look
+
+- __Creating our own Spring Boot auto-configuration starter lab__
+
+   - Clone the [project](https://github.com/sashinpivotal/boot2-autoconfig-helloworld.git) and follow TODO's (TODO 10-16, 20-26, 30-38)
+
+## Rest Template Builder
+
+-   [Javadoc](https://docs.spring.io/spring-boot/docs/current/api/org/springframework/boot/web/client/RestTemplateBuilder.html)
+-   [RestTemplate Customization](https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-resttemplate.html#boot-features-resttemplate-customization)
+-   [Tutorial](https://www.baeldung.com/spring-rest-template-builder)
+-   Example of a Spring Cloud Load Balanced Rest Template customized with
+    timeout:
+
+    ```java
+        /**
+         * RestTemplate Builder
+         *
+         * Following example sets connect timeout of 500ms,
+         * where if client cannot acquire open connection on a socket,
+         * it will time out.
+         *
+         * Operations that timeout on connect events may be retried without
+         * regard to Idempotence.
+         *
+         * The example also shows how to configure the read timeout to 2
+         * seconds.
+         * This protects the calling client from long running calls in a
+         * downstream server/producer.
+         *
+         * Retries may only be executed across read timeouts if the down
+         * stream operation is idempotent,
+         * use with care.
+         *
+         * @return RestTemplate
+         */
+        @LoadBalanced
+        @Bean
+        public RestTemplate restTemplate() {
+            return new RestTemplateBuilder()
+                    .setConnectTimeout(Duration.ofMillis(500L))
+                    .setReadTimeout(Duration.ofMillis(2000L))
+                    .build();
+        }
+    ```
+
+## How to access HSQLDB
+
+- Add the following configuration class
+
+```
+import org.hsqldb.util.DatabaseManagerSwing;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.jdbc.core.JdbcTemplate;
+
+import javax.annotation.PostConstruct;
+import javax.sql.DataSource;
+
+@Configuration
+public class HsqldbConfig {
+
+    @Autowired
+    DataSource dataSource;
+
+    @Bean
+    public JdbcTemplate getJdbcTemplate(){
+        return new JdbcTemplate(dataSource);
+    }
+
+    //default username : sa, password : ''
+    @PostConstruct
+    public void getDbManager(){
+        DatabaseManagerSwing.main(
+                new String[] { "--url", "jdbc:hsqldb:mem:testdb", "--user", "sa", "--password", ""});
+    }
+}
+```
+
+- Turn off the "java.awt.headless"
+
+```
+	System.setProperty("java.awt.headless", "false");
+```
+
+## Actuator
+
+- __Actuator/Prometheus lab__
+
+   - Follow the [lab instruction](https://github.com/sashinpivotal/spring-boot-actuator-micrometer)
+
+
+
+## Spring Boot Testing
+
+- [TDD best practices presentation](https://www.slideshare.net/axykim00/tdd-practices)
+
+- __Spring Boot TDD-driven testing__
+
+   - Create a new Spring Boot project and follow [lab instruction](https://github.com/sashinpivotal/spring-boot-tdd)
+   - Solution project is also included in the
+     above GitHub location
+
+- __Spring Cloud Contract__
+
+   - [Presentation - only slides 18 to 27](https://www.slideshare.net/MarcinGrzejszczak/consumer-driven-contracts-and-your-microservice-architecture-83680416)
+   - [Lab](https://spring.io/guides/gs/contract-rest/)
+    : Follow instruction under "How to complete this guide/To skip the basics, do the following:" section
+
+- __Spring MVC and REST__
+
+   - [Spring Web](https://docs.spring.io/spring/docs/5.1.7.RELEASE/spring-framework-reference/web.html#spring-web)
+   - [Exception handling in Spring MVC](https://spring.io/blog/2013/11/01/exception-handling-in-spring-mvc)
+
+
+## OAuth2
+
+- __OAuth2 presentations__
+
+  -  [OAuth2 overview presentation](https://www.slideshare.net/axykim00/spring-security-oauth2)
+  -  [OAuth2 in cloud native environment presentation (slides 7 to 37)](https://www.slideshare.net/WillTran1/enabling-cloud-native-security-with-oauth2-and-multitenant-uaa?qid=2c77ae8e-b2d5-4319-baad-1cd1eb8fec42&v=&b=&from_search=1)
+
+- OAuth2 lab
+
+  - Clone [Maven project](https://github.com/sashinpivotal/oauth2-examples) and follow TODO's startting from TODO-10
+  
+  
+## Tools
+
+- [IntelliJ IDEA default keymap](https://resources.jetbrains.com/storage/products/intellij-idea/docs/IntelliJIDEA_ReferenceCard.pdf)
+
+## Spring related
 
 - Spring Lifecycle changes with Spring 5.+ and Java 11
 
@@ -47,45 +183,10 @@ In addition to the standard course contents, we might use some extra reference m
       on the class you want to provide the lifecycle callbacks,
       but this ties your class to Spring.
 
-- __Creating our own Spring Boot auto-configuration starter lab__
 
-   - Clone the [project](https://github.com/sashinpivotal/boot2-autoconfig-helloworld.git) and follow TODO's (TODO 10-16, 20-26, 30-38)
+# PCF
 
-- __OAuth2 presentations__
-
-  -  [OAuth2 overview presentation](https://www.slideshare.net/axykim00/spring-security-oauth2)
-  -  [OAuth2 in cloud native environment presentation (slides 7 to 37)](https://www.slideshare.net/WillTran1/enabling-cloud-native-security-with-oauth2-and-multitenant-uaa?qid=2c77ae8e-b2d5-4319-baad-1cd1eb8fec42&v=&b=&from_search=1)
-
-- OAuth2 lab
-
-  - Clone [Maven project](https://github.com/sashinpivotal/oauth2-examples) and follow TODO's startting from TODO-10
-
-- __Actuator/Prometheus lab__
-
-   - Follow the [lab instruction](https://github.com/sashinpivotal/spring-boot-actuator-micrometer)
-
-- [TDD best practices presentation](https://www.slideshare.net/axykim00/tdd-practices)
-
-- __Spring Boot TDD-driven testing__
-
-   - Create a new Spring Boot project and follow [lab instruction](https://github.com/sashinpivotal/spring-boot-tdd)
-   - Solution project is also included in the
-     above GitHub location
-
-- __Spring Cloud Contract__
-
-   - [Presentation - only slides 18 to 27](https://www.slideshare.net/MarcinGrzejszczak/consumer-driven-contracts-and-your-microservice-architecture-83680416)
-   - [Lab](https://spring.io/guides/gs/contract-rest/)
-    : Follow instruction under "How to complete this guide/To skip the basics, do the following:" section
-
-- __Spring MVC and REST__
-
-   - [Spring Web](https://docs.spring.io/spring/docs/5.1.7.RELEASE/spring-framework-reference/web.html#spring-web)
-   - [Exception handling in Spring MVC](https://spring.io/blog/2013/11/01/exception-handling-in-spring-mvc)
-
-## How to deploy an app to PCF
-
-### Deploy a Spring Boot web application
+## Deploy a Spring Boot web application to PCF
 
 1. Create a free PWS account (if you have not done so yet) from [https://run.pivotal.io/](https://run.pivotal.io/)
 1. Download and install `cf` cli from [https://docs.cloudfoundry.org/cf-cli/install-go-cli.html](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html)
@@ -129,7 +230,7 @@ In addition to the standard course contents, we might use some extra reference m
    you can visualize and manage your Actuator endpoints in App Manager.
    See [Using Spring Boot Actuators with Apps Manager](https://docs.pivotal.io/pivotalcf/2-5/console/using-actuators.html) for more information.
    
-### OAuth in action
+## OAuth in action in PCF
 
 1. Observe that every request has `Authorization` request header set with [PRIVATE DATA HIDDEN], which represents access token
 
@@ -150,20 +251,20 @@ In addition to the standard course contents, we might use some extra reference m
    - Observe that there are three sections
    - Observe that there are scopes under payload section
 
-## PCF: Using MySQL backing servce
+## Using MySQL backing servce
 
 - Clone [boot2-mysql-app](https://github.com/sashinpivotal/boot2-mysql-app.git) and follow
   TODO steps
 
 
-## Spring Performance Considerations
+# Spring Performance Considerations
 
 - [How Fast is Spring - Blog](https://spring.io/blog/2018/12/12/how-fast-is-spring)
 - [How Fast is Spring - Short Deck with Flame graphs](https://presos.dsyer.com/decks/how-fast-is-spring.html)
 - [How Fast is Spring - Spring One 2018](https://www.youtube.com/watch?v=97UTDmonq7w)
 
 
-## Spring Boot 1.5 -> 2.0 Migration Considerations
+# Spring Boot 1.5 -> 2.0 Migration Considerations
 
 - [Spring Boot 2.0 Migration guide](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.0-Migration-Guide)
 
@@ -174,58 +275,15 @@ In addition to the standard course contents, we might use some extra reference m
    See
    [Spring Cloud Services Client Dependencies](https://docs.pivotal.io/spring-cloud-services/2-0/common/client-dependencies.html).
 
-## XML and Java Configuration
 
--   [XML Config example](https://howtodoinjava.com/spring5/core/applicationcontext-xml-config-example/)
--   [Annotation vs XML](https://docs.spring.io/spring/docs/current/spring-framework-reference/core.html#beans-annotation-config)
 
-## Rest Template Builder
-
--   [Javadoc](https://docs.spring.io/spring-boot/docs/current/api/org/springframework/boot/web/client/RestTemplateBuilder.html)
--   [RestTemplate Customization](https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-resttemplate.html#boot-features-resttemplate-customization)
--   [Tutorial](https://www.baeldung.com/spring-rest-template-builder)
--   Example of a Spring Cloud Load Balanced Rest Template customized with
-    timeout:
-
-    ```java
-        /**
-         * RestTemplate Builder
-         *
-         * Following example sets connect timeout of 500ms,
-         * where if client cannot acquire open connection on a socket,
-         * it will time out.
-         *
-         * Operations that timeout on connect events may be retried without
-         * regard to Idempotence.
-         *
-         * The example also shows how to configure the read timeout to 2
-         * seconds.
-         * This protects the calling client from long running calls in a
-         * downstream server/producer.
-         *
-         * Retries may only be executed across read timeouts if the down
-         * stream operation is idempotent,
-         * use with care.
-         *
-         * @return RestTemplate
-         */
-        @LoadBalanced
-        @Bean
-        public RestTemplate restTemplate() {
-            return new RestTemplateBuilder()
-                    .setConnectTimeout(Duration.ofMillis(500L))
-                    .setReadTimeout(Duration.ofMillis(2000L))
-                    .build();
-        }
-    ```
-
-## Microservices & Fault Tolerance Patterns
+# Microservices & Fault Tolerance Patterns
 
 - [Microservices Patterns](https://microservices.io/patterns/microservices.html)
 - [Release It! Second Edition](https://pragprog.com/book/mnee2/release-it-second-edition)
 - [Chaos Engineering](https://principlesofchaos.org/)
 - [Chaos Monkey for Spring Boot apps](https://codecentric.github.io/chaos-monkey-spring-boot/)
 
-## Certification
+# Certification
 
 - [Spring Professional Certification Study Guide](https://d1fto35gcfffzn.cloudfront.net/academy/Spring-Professional-Certification-Study-Guide.pdf)
