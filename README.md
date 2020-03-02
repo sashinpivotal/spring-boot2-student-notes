@@ -22,7 +22,7 @@ In addition to the standard course contents, we might use some extra reference m
 
 ### Creating our own Spring Boot auto-configuration starter lab
 
-   - Clone the [project](https://github.com/sashinpivotal/boot2-autoconfig-helloworld.git) and follow TODO's (TODO 10-16, 20-26, 30-38)
+   - Clone the [project](https://github.com/sashinpivotal/33-autoconfig-helloworld) and follow TODO's (TODO 10-16, 20-26, 30-38)
 
 ## REST
 
