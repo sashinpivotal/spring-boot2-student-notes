@@ -182,6 +182,36 @@ System.setProperty("java.awt.headless", "false");
 
 - Follow the [lab instruction](https://github.com/sashinpivotal/spring-boot-actuator-micrometer)
 
+### Liveness and Readiness Probes
+
+New in Spring Boot 2.2.x is the ability to create custom health
+endpoints tuned for specific health indicators.
+
+The feature is referred to as [Health Groups](https://docs.spring.io/spring-boot/docs/2.2.7.RELEASE/reference/html/production-ready-features.html#health-groups),
+and is useful if you need multiple health endpoints for different
+monitoring scenarios.
+
+One such scenaro is the use of "probes",
+which is a feature a runtime platform may use to detect the state of
+an application instance,
+and allow the platform to take action.
+
+Kubernetes,
+for example,
+has two types of probes:
+
+-   *Readiness probe* intended to indicate an application instance
+    is ready for use after its startup or initialization period.
+
+-   *Liveness probe* intended to indicate a running application instance
+    may not be able to service requests,
+    and allows for the platform to dispose of unhealthy instances.
+
+Spring Boot 2.3.x has first class support for both types of
+readiness probes,
+which you can read about
+[here](https://docs.spring.io/spring-boot/docs/2.3.0.RELEASE/reference/html/production-ready-features.html#production-ready-kubernetes-probes).
+
 ## TDD and Spring Boot Testing
 
 -   [TDD best practices presentation](https://www.slideshare.net/axykim00/tdd-practices)
@@ -306,7 +336,7 @@ System.setProperty("java.awt.headless", "false");
 1.  If you enable Actuator in your Spring Boot application,
     you can visualize and manage your Actuator endpoints in App Manager.
     See
-    [Using Spring Boot Actuators with Apps Manager](https://docs.pivotal.io/pivotalcf/2-5/console/using-actuators.html)
+    [Using Spring Boot Actuators with Apps Manager](https://docs.pivotal.io/platform/application-service/2-9/console/using-actuators.html)
     for more information.
 
 ### OAuth in action in PCF
