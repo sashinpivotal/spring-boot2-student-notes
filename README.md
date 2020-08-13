@@ -16,7 +16,12 @@ In addition to the standard course contents, we might use some extra reference m
    - [Presentation](http://deck.appcontinuum.io/assets/player/KeynoteDHTMLPlayer.html#0)
    - [Website](http://www.appcontinuum.io/)
    - [Sample application](https://github.com/platform-acceleration-lab/pal-tracker-distributed)
+   
+   
+## Event-driven architecture
 
+- [SpringOne 2019 sessions on Event-driven](https://springone.io/2019/sessions#event-driven)
+- [SpringOne 2018 sessions on Event-driven](https://springone.io/2018/sessions#event-driven) Click "Event-Driven, Reactive" button
       
 ## REST
 
