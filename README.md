@@ -18,12 +18,6 @@ In addition to the standard course contents, we might use some extra reference m
    - [Sample application](https://github.com/platform-acceleration-lab/pal-tracker-distributed)
 
       
-## Auto-configuration starter
-
-### Creating our own Spring Boot auto-configuration starter lab
-
-   - Clone the [project](https://github.com/sashinpivotal/33-autoconfig-helloworld) and follow TODO's (TODO 10-16, 20-26, 30-38)
-
 ## REST
 
 ### Spring MVC and REST
@@ -188,78 +182,6 @@ public class HsqldbConfig {
       on the class you want to provide the lifecycle callbacks,
       but this ties your class to Spring.
 
-
-# PCF
-
-## Deploy a Spring Boot web application to PCF
-
-1. Create a free PWS account (if you have not done so yet) from [https://run.pivotal.io/](https://run.pivotal.io/)
-1. Download and install `cf` cli from [https://docs.cloudfoundry.org/cf-cli/install-go-cli.html](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html)
-
-    - If you are using MacOS, you can use Homebrew
-
-    ```
-    brew tap cloudfoundry/tap
-    brew install cf-cli
-    ```
-
-1. Log in to the PWS
-
-   ```
-   cf login -a api.run.pivotal.io
-   ```
-
-1. Creat a fat jar from any of your Spring Boot web application
-
-   ```
-   <core-spring-labfiles/lab> ./gradlew 38-rest-ws-solution:build
-   ```
-
-1. Deploy the application to PCF
-
-   ```
-   <core-spring-labfiles/lab> cf push my-app -p 38-rest-ws-solution/build/libs/38-rest-ws-solution-5.0.c.RELEASE.jar --random-route
-   ```
-
-1. Display all apps deployed
-
-   ```
-   <core-spring-labfiles/lab> cf apps
-   ```
-
-1. Access the application from a browser by copying the url of the app and place it into a browser's url
-
-1. You can also manage your applications from PWS App Manager UI by going to [https://console.run.pivotal.io/](https://console.run.pivotal.io/)
-
-1. If you enable Actuator in your Spring Boot application,
-   you can visualize and manage your Actuator endpoints in App Manager.
-   See [Using Spring Boot Actuators with Apps Manager](https://docs.pivotal.io/pivotalcf/2-5/console/using-actuators.html) for more information.
-   
-## OAuth in action in PCF
-
-1. Observe that every request has `Authorization` request header set with [PRIVATE DATA HIDDEN], which represents access token
-
-   ```
-   <core-spring-labfiles/lab> cf -v app my-app
-   ```
-
-1. Go to <home-directory>/.cf and observe that there is a file called `config.json`
-
-1. Display the contents of `config.json" and observe that it has access token
-
-   ```
-   cat config.json
-   ```
-
-1. Copy the access token (starting from the character right `bearer` under `Authorization` field and analyze it via [https://jwt.io/](https://jwt.io/)
-
-   - Observe that there are three sections
-   - Observe that there are scopes under payload section
-
-## Using MySQL backing servce
-
-- Clone [boot2-mysql-app](https://github.com/sashinpivotal/boot2-mysql-app.git) and follow
-  TODO steps
 
 
 # Spring Performance Considerations
