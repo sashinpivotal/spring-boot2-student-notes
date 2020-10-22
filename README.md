@@ -211,6 +211,7 @@ public class HsqldbConfig {
 
 # Microservices & Fault Tolerance Patterns
 
+- [Monolith to Microservices Book](https://www.amazon.com/Monolith-Microservices-Evolutionary-Patterns-Transform/dp/1492047848/ref=sr_1_1?dchild=1&keywords=monolith+to+Microservices&qid=1603380062&s=instant-video&sr=1-1-catcorr)
 - [Microservices Patterns](https://microservices.io/patterns/microservices.html)
 - [Release It! Second Edition](https://pragprog.com/book/mnee2/release-it-second-edition)
 - [Chaos Engineering](https://principlesofchaos.org/)
