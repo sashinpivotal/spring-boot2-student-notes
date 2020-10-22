@@ -22,6 +22,14 @@ In addition to the standard course contents, we might use some extra reference m
 
 - [SpringOne 2019 sessions on Event-driven](https://springone.io/2019/sessions#event-driven)
 - [SpringOne 2018 sessions on Event-driven](https://springone.io/2018/sessions#event-driven) Click "Event-Driven, Reactive" button
+
+## Spring Data JDBC presentations
+
+
+- [Domain-driven disign with relational database using Spring Data JDBC](https://www.youtube.com/watch?v=GOSW911Ox6s&ab_channel=SpringDeveloper)
+  - Talks about ORM complexities and they can be addressed by Spring Data JDBC
+  
+- [The new kid on the block: Spring Data JDBC] (https://www.youtube.com/watch?v=AnIouYdwxo0&ab_channel=SpringDeveloper)
       
 ## REST
 
